@@ -12,7 +12,7 @@ This is a simulated case study created for the MIT 8103 Advanced Database System
 
 ### 2. Database technology
 
-- **DBMS:** PostgreSQL 18 (confirm the exact installed version with `SELECT version();`)
+- **DBMS:** PostgreSQL 18docs: update Portfolio 1 README
 - **Database name:** `transmove_logistics`
 - **Database tool:** pgAdmin 4
 - **Schema:** `public`
@@ -42,7 +42,7 @@ The design uses primary keys to identify records and foreign keys to link relate
 - One truck can have many maintenance records.
 - One truck can have multiple vehicle devices.
 
-The `delivery_assignments` table is separate from `shipments` so that assignment changes can be recorded without overwriting previous assignment records. The current implementation assumes each assignment covers one shipment, one truck and one driver.
+The `delivery_assignments` table is separate from `shipments` so that assignment changes can be recorded without overwriting previous assignment records.
 
 ### 5. Keys and constraints
 
@@ -79,11 +79,9 @@ The following implementation checks have been carried out in pgAdmin 4:
 8. Joined `delivery_assignments` to `shipments`, `trucks` and `drivers` to display assignments.
 9. Tested a truck insert with `capacity_kg = 0`. PostgreSQL rejected it with check-constraint violation `trucks_capacity_kg_check` (SQLSTATE `23514`), confirming that the positive-capacity rule is enforced.
 
-The ER diagram should be saved with all table relationship lines visible. Confirm the final exported image or screenshot before including it in the submission.
+### 8. Evidence
 
-### 8. Evidence to include
-
-Place the evidence files in an `evidence/` directory and use these filenames where applicable:
+The `evidence/` directory contains screenshots from the database implementation, validation tests, and query results.
 
 - `01_database_tables.jpeg` – query showing all eight tables
 - `02_table_structure.jpeg` – `trucks` table columns and data types
@@ -95,16 +93,17 @@ Place the evidence files in an `evidence/` directory and use these filenames whe
 - `08_delivery_assignments.jpeg` – shipment/truck/driver assignment join result
 - `09_validation_test.jpeg` – rejected insert showing the check-constraint error
 - `10_erd_diagram.jpeg` – ER diagram with readable tables and relationship lines
+- `11_data_quality_checks.jpeg` — results of the data-quality validation queries.
+- `12_postgresql_version.jpeg` – PostgreSQL version used for the database implementation, obtained using SELECT version().
 
-Only list evidence files here after you have saved and checked them. Do not include screenshots that are missing or unreadable.
 
-### 9. Files to keep in this portfolio folder
+### 9. Portfolio files
 
-- `README.md` – this documentation
-- `schema.sql` – the table and index creation statements
-- `sample_data.sql` – the fictional sample data insert statements
-- `validation_tests.sql` – queries and constraint tests
-- `evidence/` – implementation screenshots and the ER diagram
+- `README.md` – case study, database design decisions, implementation details, and testing notes.
+- `schema.sql` – SQL statements for creating the tables, constraints, and indexes.
+- `sample_data.sql` – SQL statements for inserting fictional TransMove Logistics data.
+- `validation_tests.sql` – queries used to verify the database structure, relationships, constraints, and data quality.
+- `evidence/` – screenshots supporting the database implementation and testing.
 
 ### 10. Technical reflection
 
@@ -114,7 +113,7 @@ The next improvements would be to document query execution plans and indexing de
 
 ### 11. AI-use declaration
 
-AI assistance was used to help explain database design concepts, plan the schema, draft SQL and documentation, and troubleshoot implementation steps. The SQL was run in pgAdmin and the results were checked during implementation. The student remains responsible for reviewing the work, understanding each design choice, verifying the final scripts and ensuring that all submitted evidence accurately reflects their own database.
+I used ChatGPT to help me understand database design concepts, plan the TransMove Logistics schema, draft SQL scripts and documentation, and troubleshoot issues during implementation. I tested the SQL in PostgreSQL using pgAdmin and checked the tables, relationships, constraints, indexes, and query results. I am responsible for the final submission and for understanding and verifying the work and evidence included in this portfolio.
 
 ### 12. References
 
