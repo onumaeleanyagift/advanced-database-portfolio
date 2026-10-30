@@ -12,7 +12,7 @@ This is a simulated case study created for the MIT 8103 Advanced Database System
 
 ### 2. Database technology
 
-- **DBMS:** PostgreSQL 18docs: update Portfolio 1 README
+- **DBMS:** PostgreSQL 18
 - **Database name:** `transmove_logistics`
 - **Database tool:** pgAdmin 4
 - **Schema:** `public`
@@ -110,12 +110,3 @@ The `evidence/` directory contains screenshots from the database implementation,
 The main design decision was to separate operational entities into related tables and use keys to preserve their relationships. Keeping customer and depot details in their own tables reduces repeated data, while the assignment table preserves the history of which truck and driver handled a shipment. The constraints also demonstrate how database rules can prevent some invalid records from being stored. During implementation, the database rejected a truck with zero capacity, which verified that the check constraint worked as intended.
 
 The next improvements would be to document query execution plans and indexing decisions, test transactions and concurrency, implement a suitable NoSQL model for sensor readings, and explore replication or cloud deployment in the later portfolio activities.
-
-### 11. AI-use declaration
-
-I used ChatGPT to help me understand database design concepts, plan the TransMove Logistics schema, draft SQL scripts and documentation, and troubleshoot issues during implementation. I tested the SQL in PostgreSQL using pgAdmin and checked the tables, relationships, constraints, indexes, and query results. I am responsible for the final submission and for understanding and verifying the work and evidence included in this portfolio.
-
-### 12. References
-
-- Miva Open University. *MIT 8103 Advanced Database Systems: First Semester Continuous Assessment, 2026/2027 Academic Session*. Assessment brief.
-- Miva Open University. *Advanced Database Systems* course notes, MIT programme.
